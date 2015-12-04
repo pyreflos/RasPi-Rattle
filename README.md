@@ -14,4 +14,4 @@ Recommended Hardware:
 Dependencies:
 
     Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
-        sdf sd f
+    
