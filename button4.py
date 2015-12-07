@@ -19,7 +19,7 @@ GPIO.setup(ledPinA, GPIO.OUT)  ## LED pin set as output
 GPIO.setup(ledPinB, GPIO.OUT)
 GPIO.setup(ledPinC, GPIO.OUT)
 GPIO.setup(ledPinD, GPIO.OUT)
-GPIO.setup(BtnPinA, GPIO.IN, pull_up_down=GPIO.PUD_UP)  ##  Button pin set as input w/ pull up
+GPIO.setup(BtnPinA, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  ##  Button pin set as input w/ pull up
 GPIO.setup(BtnPinB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  ##
 GPIO.setup(BtnPinC, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  ##
 GPIO.setup(BtnPinD, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  ##
