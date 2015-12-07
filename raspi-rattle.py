@@ -12,13 +12,30 @@
 ##      Dropbox-Uploader by andreafabrizi (https://github.com/andreafabrizi/Dropbox-Uploader)
 ##  
 
-import os
+
+##  External module imports
+import RPi.GPIO as GPIO
 import time
 import picamera
 from datetime import datetime, timedelta
 from subprocess import call
+import atexit
 
+##  Pin Definitions:
+LED_Prgm = 11  ##  Physical (BCM) 11; GPIO 17
+LED_Image = 13  ##  Physical (BCM) 13; GPIO 27
+LED_Video = 15  ##  Physical (BCM) 15; GPIO 22
+Btn_Image = 29  ##  Physical (BCM) 29; GPIO 5
+Btn_Video = 31  ##  Physical (BCM) 31; GPIO 6
+
+##  Variables Setup:
 file_path = '/home/pi/ZBA_Timelapse/images/'
+
+##  Cleans GPIO pins on program exit
+def cleanup():
+    print('Ended abruptly')
+    GPIO.cleanup()
+atexit.register(cleanup)
 
 def wait():
     # Calculate the delay to the start of the next hour
