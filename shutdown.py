@@ -15,13 +15,15 @@ GPIO.setup(ledPower, GPIO.OUT)  ## Power Off LED pin set as output
 GPIO.setup(btnPower, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  ##  Power Off button pin set as input w/ pull-up
 
 ##  Initial State for LEDs:
-GPIO.output(ledPower, GPIO.HIGH)
+GPIO.output(ledPower, GPIO.LOW)
 
+##  Cleanup GPIO pins on exit
 def cleanup():
   print('Ended abruptly')
   GPIO.cleanup()
 atexit.register(cleanup)
 
+##  Test for shutdown button, on press flash LEDs, then shutdown
 while True:
     if(GPIO.input(btnPower, bouncetime=200) == False):
         sdi = 0
@@ -31,6 +33,7 @@ while True:
             GPIO.output (ledPower, GPIO.HIGH)
             time.sleep (0.5)
             sdi = sdi + 1
+        print('Shutting donw Raspberry Pi now...')
         os.system("sudo shutdown -h now")
         GPIO.output (
         break
