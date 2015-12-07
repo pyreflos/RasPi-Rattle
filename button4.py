@@ -4,14 +4,14 @@ import time
 import atexit
 
 ##  Pin Definition:
-ledPinA = 17  ##  Physical (BCM) 37; GPIO 26
+ledPinA = 17  ##
 ledPinB = 18  ##
 ledPinC = 27  ##
 ledPinD = 22  ##
-BtnPinA = 5  ##  Physical (BCM) 35; GPIO 19
+BtnPinA = 5  ##  BCM/GPIO 5; Physical 29
 BtnPinB = 6  ##
 BtnPinC = 13  ##
-BtnPinD = 19  ##
+BtnPinD = 12  ##
 
 ##  Pin Setup:
 GPIO.setmode(GPIO.BCM)  ##  Broadcom pin-numbering scheme
