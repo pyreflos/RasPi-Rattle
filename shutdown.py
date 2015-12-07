@@ -23,9 +23,9 @@ def cleanup():
 atexit.register(cleanup)
 
 while True:
-    if(GPIO.input(19, bouncetime=300) == False):
+    if(GPIO.input(btnPower, bouncetime=200) == False):
         sdi = 0
-        while (count <5):
+        while (count <9):
             GPIO.output (ledPower, GPIO.LOW)
             time.sleep (0.5)
             GPIO.output (ledPower, GPIO.HIGH)
