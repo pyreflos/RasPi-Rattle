@@ -16,7 +16,7 @@ Dependencies:
     Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
 
 | opt | name | image size conversion |
----------------------------------------------------------------------------------------------
+---|---------------|--------------------------------------
 | 1 | Scaled 2k | 2592x1944 -> crop to 2592x1367 (top/bottom lost) -> scale to 2048x1080 |
 | 2 | Cropped 2k | 2592x1944 -> crop to 2048x1080 (centered - outside lost) |
 | 3 | Scaled 1080p | 2592x1944 -> crop to 2592x---- (top/bottom lost) -> scale to 1920x1080 |
