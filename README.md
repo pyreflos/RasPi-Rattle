@@ -3,36 +3,34 @@ RASpberry PI - RemoTe Time LapsE: find wifi, plug in power, take pictures, make 
 
 Copyright (c) 2015 Pyre Flos, Provided to the public under The MIT License
 
-Recommended Hardware:
+####Hardware:
 
-    Raspberry Pi (A+)
-    Raspberry Pi Camera
-    PaPirus (ePaper, Buttons, RTC)
-    EdiMax (Wifi)
-    Apple iPad charger (5V @ 2.1A)
+Required and recommended hardware listed below. Circuit design for the Control Circuit is shown under Control_Circuit.png.
 
-Dependencies:
+| Required Hardware | Recommended Hardware | Optional Hardware |
+| ----- | ----- | ----- |
+| Raspberry Pi | Wifi Dongle | Screen* |
+| Raspberry Pi Camera | RTC DS1307 | PaPirus** | 
+| Control Circuit |  |  |  |
+| Power Supply (5v, 500+ mA) |  |  |
+* *programming optimized for 7" IPS screen @ 1280x800, but can easily be modified via config.py
+* **future implimentation - this will replace the control circuit and RTC, and be an option in config.py
 
-    Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
+####Dependencies:
 
-Inteded image options:
+Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
+Picamera
+PaPirus (optional)
 
-| opt | name | image size conversion |
----|---------------|--------------------------------------
-| 1 | Scaled 2k | 2592x1944 -> crop to 2592x1367 (top/bottom lost) -> scale to 2048x1080 |
-| 2 | Cropped 2k | 2592x1944 -> crop to 2048x1080 (centered - outside lost) |
-| 3 | Scaled 1080p | 2592x1944 -> crop to 2592x---- (top/bottom lost) -> scale to 1920x1080 |
-| 4 | Cropped 1080p | 2592x1944 -> crop to 1920x1080 (centered - outside lost) |
-| 5 | Scaled 720p | 2592x1944 -> crop to 2592x----(top/bottom lost) -> scale to 1280x720 |
-| 6 | Cropped 720p | 2592x1944 -> crop to 1280x720 (centered - outside lost) |
+####Image Options
 
-Stray code that needs to be moved...
-
-if custom_width <= 0, set custom_width = 10
-else if custom_width >= 2593, set custom_width = 2592
-else custom_width = 648
-
-avconv -y -r 30 -i *.jpg -r 30 -vcodec libx264 -q:v 15 -vf crop=ow=2592:oh=1367,scale=ow=2048:oh=1080 timelapse-2015-12-03.mp4
-
-avconv -y -r 30 -i img_%4d-%2d-%2d_%2d-%2d-%2d.jpg -r 30 -vcodec libx264 -q:v 15 -vf crop=ow=2592:oh=1367,scale=ow=2048:oh=1080 timelapse-2015-12-03.mp4
+| Option | Name | Image Size | Aspect Ratio| Video Processing |
+| :-----: | :-----: | :-----: | :-----: | ----- |
+| 0 | Custom | size set by user | n/a | same as image |
+| 1 | Full Size | 2592x1944 | 4:3 | same as image |
+| 2 | DCI 2k | 2592x1367* | 19:10 | scale to 2048x1080 |
+| 3* | 1080p | 2592x1458* | 16:9 | scale to 1920x1080 |
+| 4 | 720p | 2592x1458* | 16:9 | scale to 1280x720 |
+* *Top/Bottom of camera output cropped equally
+* ** This is the default
 
