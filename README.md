@@ -18,11 +18,9 @@ Required and recommended hardware listed below. Circuit design for the Control C
 
 ####Dependencies:
 
-Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
-
-Picamera
-
-PaPirus (optional)
+* Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
+* Picamera (https://github.com/waveform80/picamera)
+* PaPirus (optional) (https://www.kickstarter.com/projects/pisupply/papirus-the-epaper-screen-hat-for-your-raspberry-p)
 
 ####Image Options
 
