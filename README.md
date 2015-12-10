@@ -19,7 +19,9 @@ Required and recommended hardware listed below. Circuit design for the Control C
 ####Dependencies:
 
 Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
+
 Picamera
+
 PaPirus (optional)
 
 ####Image Options
