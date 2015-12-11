@@ -3,6 +3,16 @@ RASpberry PI - RemoTe Time LapsE: find wifi, plug in power, take pictures, make 
 
 Copyright (c) 2015 Pyre Flos, Provided to the public under The MIT License
 
+##### Table of Contents
+
+* How do I use it?
+* Current Status
+* The Future
+* Features Implemented
+* Hardware
+* Dependencies
+* Image Options
+
 ####What is it?
 
 RasPi-Rattle is a time lapse photography project powered by a Raspberry Pi and the Raspberry Pi Camera Module. It is written in python and is designed to take high-resolution images, upload them to Dropbox, and combine the images into a video. It is intended to be a stand-alone process - once the hardware is assembled, the software installed, and the configuration checked, the complete package can be setup somewhere, powered on, and everything else is automated.
@@ -21,7 +31,18 @@ Unfortunately, video processing has not yet been implemented.
 
 The intended future state of the project is to have two operating modes: a “civilized” mode and an “uncivilized” mode. The civilized version will require an internet connection, host a local sftp server, possible vpn tunneling, and process video on demand via ssh commands. This way the system truly is remotely controlled. The uncivilized version, which might be more aptly named the “lite” version, will be completely headless with no need for setup beyond installation & initial configuration. Everything will be controlled via a few hardware buttons, with start/stop for the time lapse, video processing, and Wi-Fi connection. Retrieving files will be via ssh/sftp again, but those services will only run on demand. It will also be designed to minimize power usage, so as to allow the whole system to run on battery power.
 
-####Hardware:
+####Features Implemented
+
+| Implemented | Description |
+| :-----: | :----- |
+| yes | take images on interval |
+| no | allow images to be time-stamped or sequentially numbered |
+| no | adjust image sizes with configuration file |
+| yes | upload images to Dropbox |
+| no | process images into video |
+| no | upload video to Dropbox |
+
+####Hardware
 
 Required and recommended hardware listed below. Circuit design for the Control Circuit is shown under Control_Circuit.png.
 
@@ -34,7 +55,7 @@ Required and recommended hardware listed below. Circuit design for the Control C
 * *programming optimized for 7" IPS screen @ 1280x800, but can easily be modified via config.py
 * **future implementation - this will replace the control circuit and RTC, and be an option in config.py
 
-####Dependencies:
+####Dependencies
 
 * Dropbox-Uploader by andreafabrizi  (https://github.com/andreafabrizi/Dropbox-Uploader)
 * Picamera (https://github.com/waveform80/picamera)
