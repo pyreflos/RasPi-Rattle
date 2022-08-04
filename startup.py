@@ -18,5 +18,5 @@ def startprgm(i):
         pass
 
 for i in range(2):
-    t = threasding.Thread(target=startprgm, args=(i,))
+    t = threading.Thread(target=startprgm, args=(i,))
     t.start()
